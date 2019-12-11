@@ -17,14 +17,34 @@ public class Members {
     int class_id ;
     int m_phone ;
     int date ;
-
+    
+    
     public Members() {
-            try { 
+    }
+
+    public void addMembers( String m_name , int m_id , int class_id , int m_phone , int date)
+    {
+           try { 
             String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO members " + 
                 "VALUES (" + m_name + "," + m_id + "," + class_id + "," + m_phone + "," + date + ")") ;  
+            conn.close(); 
+        } catch (Exception e) { 
+            System.err.println("Got an exception! "); 
+            System.err.println(e.getMessage()); 
+        } 
+    }
+    
+        public void deleteMembers(int m_id)
+    {
+           try { 
+            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            Connection conn = DriverManager.getConnection(url,"",""); 
+            Statement st = conn.createStatement(); 
+            st.executeUpdate("DELETE FROM members " + 
+                "WHERE m_id = " + m_id) ;  
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
