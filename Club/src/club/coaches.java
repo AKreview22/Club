@@ -11,25 +11,24 @@ import java.sql.*;
  *
  * @author Ahmed Kamal
  */
-public class Members {
-    String m_name ;
-    int m_id ;
+public class coaches {
+    String c_name ;
+    int c_id ;
     int class_id ;
-    int m_phone ;
-    int date ;
+    int c_phone ;
     
     
-    public Members() {
+    public coaches() {
     }
 
-    public void addMembers( String m_name , int m_id , int class_id , int m_phone , int date)
+    public void addCoaches( String c_name , int c_id , int class_id , int c_phone)
     {
            try { 
             String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
-            st.executeUpdate("INSERT INTO members " + 
-                "VALUES (" + m_name + "," + m_id + "," + class_id + "," + m_phone + "," + date + ")") ;  
+            st.executeUpdate("INSERT INTO coaches " + 
+                "VALUES (" + c_name + "," + c_id + "," + class_id + "," + c_phone + ")") ;  
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -37,14 +36,14 @@ public class Members {
         } 
     }
     
-        public void deleteMembers(int m_id)
+        public void deleteCoaches(int c_id)
     {
            try { 
             String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
-            st.executeUpdate("DELETE FROM members " + 
-                "WHERE m_id = " + m_id) ;  
+            st.executeUpdate("DELETE FROM coaches " + 
+                "WHERE c_id = " + c_id) ;  
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -52,13 +51,13 @@ public class Members {
         } 
     }
         
-                public void ShowAllMembers()
+                public void ShowAllCoaches()
     {
            try { 
             String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
-            st.executeUpdate("SELECT * from members ;") ;  
+            st.executeUpdate("SELECT * from coaches ;") ;  
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -66,21 +65,20 @@ public class Members {
         } 
     }
 
-
-    public String getM_name() {
-        return m_name;
+    public String getC_name() {
+        return c_name;
     }
 
-    public void setM_name(String m_name) {
-        this.m_name = m_name;
+    public void setC_name(String c_name) {
+        this.c_name = c_name;
     }
 
-    public int getM_id() {
-        return m_id;
+    public int getC_id() {
+        return c_id;
     }
 
-    public void setM_id(int m_id) {
-        this.m_id = m_id;
+    public void setC_id(int c_id) {
+        this.c_id = c_id;
     }
 
     public int getClass_id() {
@@ -91,23 +89,14 @@ public class Members {
         this.class_id = class_id;
     }
 
-    public int getM_phone() {
-        return m_phone;
+    public int getC_phone() {
+        return c_phone;
     }
 
-    public void setM_phone(int m_phone) {
-        this.m_phone = m_phone;
+    public void setC_phone(int c_phone) {
+        this.c_phone = c_phone;
     }
 
-    public int getDate() {
-        return date;
-    }
 
-    public void setDate(int date) {
-        this.date = date;
-    }
-    
-    
-    
-    
+   
 }
