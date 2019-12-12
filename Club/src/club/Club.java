@@ -5,6 +5,8 @@
  */
 package club;
 
+import java.io.IOException;
+
 /**
  *
  * @author Ahmed Kamal
@@ -14,8 +16,10 @@ public class Club {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Login log = new Login();
+    public static void main(String[] args) throws IOException {
+//        Login log = new Login();
+        NewClass n=new NewClass();
+        
     }
     
 }
