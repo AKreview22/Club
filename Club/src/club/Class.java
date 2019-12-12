@@ -12,6 +12,7 @@ import java.sql.*;
  * @author Ahmed Kamal
  */
 public class Class {
+    //TEST
     String class_name ;
     int class_id ;
     int class_hours ;

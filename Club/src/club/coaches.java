@@ -28,7 +28,8 @@ public class coaches {
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO coaches " + 
-                "VALUES (" + c_name + "," + class_id + "," + c_phone + ")") ;  
+                "VALUES (" + c_name + "," + class_id + "," + c_phone + ")") ;
+            //I REMOVED THE ID FROM HERE AS I MADE IT AN IDENTITY IN THE DATABASE
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 

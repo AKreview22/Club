@@ -28,7 +28,8 @@ public class Members {
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO members " + 
-                "VALUES (" + m_name+ "," + class_id + "," + m_phone + ")") ;  
+                "VALUES (" + m_name+ "," + class_id + "," + m_phone + ")") ; 
+             //I REMOVED THE ID FROM HERE AS I MADE IT AN IDENTITY IN THE DATABASE
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
