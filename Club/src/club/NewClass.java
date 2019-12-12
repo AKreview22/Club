@@ -29,7 +29,7 @@ public class NewClass extends JFrame{
     JTextField pass=new  JTextField();
     JButton Login  = new JButton();
     
-    
+    JPanel n=new JPanel();
     
     
     
@@ -73,9 +73,9 @@ public class NewClass extends JFrame{
  
            
         });
-  add(pass);
-  add(username);
-  add(Login);
+  n.add(pass);
+  n.add(username);
+  n.add(Login);
  validate();
 }
     
