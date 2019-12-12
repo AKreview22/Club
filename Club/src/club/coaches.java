@@ -21,14 +21,14 @@ public class coaches {
     public coaches() {
     }
 
-    public void addCoaches( String c_name , int c_id , int class_id , int c_phone)
+    public void addCoaches( String c_name , int class_id , int c_phone)
     {
            try { 
             String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO coaches " + 
-                "VALUES (" + c_name + "," + c_id + "," + class_id + "," + c_phone + ")") ;  
+                "VALUES (" + c_name + "," + class_id + "," + c_phone + ")") ;  
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
