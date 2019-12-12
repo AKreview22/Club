@@ -29,7 +29,7 @@ public class NewClass extends JFrame{
     JTextField pass=new  JTextField();
     JButton Login  = new JButton();
     
-    JPanel n=new JPanel();
+    JPanel jp=new JPanel();
     
     
     
@@ -38,6 +38,9 @@ public class NewClass extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setSize(1650,750);
+        setContentPane(new JLabel(new ImageIcon("IMG-20191201-WA0008.png")));
+        
+        
         
         username.setBounds(825, 300, 130, 30);
         pass.setBounds(825, 400, 130, 30);
@@ -73,9 +76,9 @@ public class NewClass extends JFrame{
  
            
         });
-  n.add(pass);
-  n.add(username);
-  n.add(Login);
+  add(pass);
+ add(username);
+  add(Login);
  validate();
 }
     
