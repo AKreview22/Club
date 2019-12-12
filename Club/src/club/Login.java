@@ -97,21 +97,21 @@ public class Login extends javax.swing.JFrame {
        try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection con = DriverManager.getConnection(url);
-            String sql = "Select * from test where username=? and password = ?";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, username.getText());
-            pst.setString(2, password.getText());
-            ResultSet rs = pst.executeQuery();
-            if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Username and Password Matched");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Username and password not Correct");
-                username.setText("");
-                password.setText("");
-            }
-            con.close();
+           try (Connection con = DriverManager.getConnection(url)) {
+               String sql = "Select * from test where username=? and password = ?";
+               PreparedStatement pst = con.prepareStatement(sql);
+               pst.setString(1, username.getText());
+               pst.setString(2, password.getText());
+               ResultSet rs = pst.executeQuery();
+               if(rs.next()){
+                   JOptionPane.showMessageDialog(null, "Username and Password Matched");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Username and password not Correct");
+                   username.setText("");
+                   password.setText("");
+               }
+           }
         }
         catch(SQLException | HeadlessException e){
             JOptionPane.showMessageDialog(null, e);
