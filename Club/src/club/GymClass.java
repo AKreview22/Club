@@ -21,14 +21,14 @@ public class GymClass {
     public GymClass() {
     }
 
-    public void addClasses( String class_name , int class_id , int class_hours)
+    public void addClasses( String class_name , int class_hours)
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO class " + 
-                "VALUES (" + class_name + "," + class_id + "," + class_id + "," + class_hours + ")") ;  
+                "VALUES (" + class_name + "," + class_hours + ")") ;  
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -39,7 +39,7 @@ public class GymClass {
         public void deleteClasses(int class_id)
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("DELETE FROM class " + 
@@ -54,7 +54,7 @@ public class GymClass {
                 public void ShowAllClasses()
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("SELECT * from class ;") ;  

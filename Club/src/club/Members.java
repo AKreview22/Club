@@ -24,7 +24,7 @@ public class Members {
     public void addMembers( String m_name , int class_id , int m_phone)
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO members " + 
@@ -40,7 +40,7 @@ public class Members {
         public void deleteMembers(int m_id)
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("DELETE FROM members " + 
@@ -55,7 +55,7 @@ public class Members {
                 public void ShowAllMembers()
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("SELECT * from members ;") ;  

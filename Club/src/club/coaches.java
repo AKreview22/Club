@@ -16,19 +16,20 @@ public class coaches {
     int c_id ;
     int class_id ;
     int c_phone ;
+    int c_salary ;
     
     
     public coaches() {
     }
 
-    public void addCoaches( String c_name , int class_id , int c_phone)
+    public void addCoaches( String c_name , int class_id , int c_phone , int c_salary )
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO coaches " + 
-                "VALUES (" + c_name + "," + class_id + "," + c_phone + ")") ;
+                "VALUES (" + c_name + "," + class_id + "," + c_phone + "," + c_salary + ")") ;
             //I REMOVED THE ID FROM HERE AS I MADE IT AN IDENTITY IN THE DATABASE
             conn.close(); 
         } catch (Exception e) { 
@@ -40,7 +41,7 @@ public class coaches {
         public void deleteCoaches(int c_id)
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("DELETE FROM coaches " + 
@@ -55,7 +56,7 @@ public class coaches {
                 public void ShowAllCoaches()
     {
            try { 
-            String url = "jdbc:msql://200.210.220.1:1114/Demo"; 
+            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb"; 
             Connection conn = DriverManager.getConnection(url,"",""); 
             Statement st = conn.createStatement(); 
             st.executeUpdate("SELECT * from coaches ;") ;  
