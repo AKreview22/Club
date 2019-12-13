@@ -118,8 +118,7 @@ public class MembersGUI extends JFrame{
            @Override
            public void actionPerformed(ActionEvent ae) {
                Members obj=new Members();
-              obj.addMembers(MemberNameText.getText(),Integer.parseInt(MemberClassText.getText()),Integer.parseInt(MemberPhoneText.getText()));
-           }
+                obj.deleteMembers(Integer.parseInt(MemberIDText.getText()));           }
         });
         Delete.setBounds(300,350,30,30);
         add(Delete);

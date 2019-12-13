@@ -104,7 +104,5 @@ public class GymClass {
     public void setClass_hours(int class_hours) {
         this.class_hours = class_hours;
     }
-
-  
-   
+    
 }

@@ -83,6 +83,20 @@ public class coaches {
             System.err.println(e.getMessage()); 
         }             
     }
+         
+         public void updateSalary(int c_id , int c_salary)
+         {
+              try { 
+            Connection conn = new ConnectionFunction().connect();
+            Statement st = conn.createStatement(); 
+            st.executeUpdate("UPDATE coaches " + 
+                "set c_salary = " + c_salary + "WHERE c_id = "+ c_id) ;  
+            conn.close(); 
+        } catch (Exception e) { 
+            System.err.println("Got an exception! "); 
+            System.err.println(e.getMessage()); 
+        } 
+         }
    
 
     public String getC_name() {
