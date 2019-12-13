@@ -6,6 +6,7 @@
 package club;
 
 import java.sql.*;
+import java.util.*;
 
 /**
  *
@@ -21,14 +22,22 @@ public class GymClass {
     public GymClass() {
     }
 
+    public GymClass(String class_name, int class_id, int class_hours) {
+        this.class_name = class_name;
+        this.class_id = class_id;
+        this.class_hours = class_hours;
+    }
+    
+    
+
     public void addClasses( String class_name , int class_hours)
     {
            try { 
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection conn = DriverManager.getConnection(url,"",""); 
+             Connection conn = new ConnectionFunction().connect();
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO class " + 
-                "VALUES (" + class_name + "," + class_hours + ")") ;  
+                "VALUES (" + "'" + class_name + "'" + "," + class_hours + ")") ;
+            //I REMOVED THE ID FROM HERE AS I MADE IT AN IDENTITY IN THE DATABASE
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -39,8 +48,7 @@ public class GymClass {
         public void deleteClasses(int class_id)
     {
            try { 
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection conn = DriverManager.getConnection(url,"",""); 
+            Connection conn = new ConnectionFunction().connect();
             Statement st = conn.createStatement(); 
             st.executeUpdate("DELETE FROM class " + 
                 "WHERE class_id = " + class_id) ;  
@@ -53,16 +61,24 @@ public class GymClass {
         
                 public void ShowAllClasses()
     {
-           try { 
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection conn = DriverManager.getConnection(url,"",""); 
-            Statement st = conn.createStatement(); 
-            st.executeUpdate("SELECT * from class ;") ;  
-            conn.close(); 
+
+               ArrayList<GymClass> classList = new ArrayList<>();
+               
+               try {
+                   Connection conn = new ConnectionFunction().connect();
+                   Statement st = conn.createStatement();
+                   ResultSet rs= st.executeQuery("SELECT * FROM coaches");
+                   GymClass classes ;
+                   while(rs.next()){
+                       classes=new GymClass(rs.getString(1),rs.getInt(2)
+                               ,rs.getInt(3));
+                       classList.add(classes);
+                   }  
+          conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
-        } 
+        }  
     }
 
     public String getClass_name() {
