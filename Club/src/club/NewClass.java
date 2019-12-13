@@ -24,6 +24,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * @author marti
  */
 public class NewClass extends JFrame{
+private static String uName, password;
     
     JTextField username=new JTextField();
     JTextField pass=new  JTextField();
@@ -49,30 +50,12 @@ public class NewClass extends JFrame{
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-              try{
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-           try (Connection con = DriverManager.getConnection(url)) {
-               String sql = "Select * from test where username=? and password = ?";
-               PreparedStatement pst = con.prepareStatement(sql);
-               pst.setString(1, username.getText());
-               pst.setString(2, pass.getText());
-               ResultSet rs = pst.executeQuery();
-               if(rs.next()){
-                   JOptionPane.showMessageDialog(null, "Username and Password Matched");
-               }
-               else{
-                   JOptionPane.showMessageDialog(null, "Username and password not Correct");
-                   username.setText("");
-                   pass.setText("");
-               }
-           }
-        }
-         catch(SQLException | HeadlessException e){
-            JOptionPane.showMessageDialog(null, e);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+             uName = username.getText();
+        password = pass.getText();
+       boolean b =new LoginFunc().checkLogin(uName,password);
+       if(b== true){
+           NewClass.this.hide();
+       }
     }                             
  
            
