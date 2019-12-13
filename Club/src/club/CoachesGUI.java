@@ -33,19 +33,24 @@ public class CoachesGUI extends JFrame{
     JLabel Coaches = new JLabel("Coaches");
     JTextField CoachNameText=new JTextField();
     JTextField CoachIDText=new JTextField();
+     JTextField CoachIDText2=new JTextField();
     JTextField CoachClassText=new JTextField();
     JTextField CoachPhoneText=new JTextField();
     JTextField CoachSalaryText=new JTextField();
+    JTextField CoachSalaryText2=new JTextField();
     JLabel CoachNameLabel=new JLabel("Name");
     JLabel CoachIDLabel=new JLabel("ID");
+    JLabel CoachIDLabel2=new JLabel("ID");
     JLabel CoachClasseLabel=new JLabel("Class");
     JLabel CoachPhoneLabel=new JLabel("Phone Number");
-     JLabel CoachSalaryLabel=new JLabel("Salary");
+    JLabel CoachSalaryLabel=new JLabel("Salary");
+    JLabel CoachSalaryLabel2=new JLabel("Salary");
     Icon AddIcon =new ImageIcon("images(2).png");
     Icon DeleteIcon =new ImageIcon("images(3).png");
     JButton Add=new JButton(AddIcon);
     JButton Delete=new JButton(DeleteIcon);
     JButton ShowAll=new JButton("Show all Coaches");
+    JButton Update=new JButton("Update");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
     
@@ -118,6 +123,25 @@ public class CoachesGUI extends JFrame{
         CoachSalaryText.setFont(fontText);
         add(CoachSalaryText);
         
+        CoachIDLabel2.setForeground(Color.white);
+        CoachIDLabel2.setBounds(40,400, 200, 40);
+        CoachIDLabel2.setFont(fontLabel);
+        add(CoachIDLabel2);   
+        
+        CoachSalaryLabel2.setForeground(Color.white);
+        CoachSalaryLabel2.setBounds(250,400, 200, 40);
+        CoachSalaryLabel2.setFont(fontLabel);
+        add(CoachSalaryLabel2);
+        
+        CoachIDText2.setBounds(40, 450, 200, 35);
+        CoachIDText2.setFont(fontLabel);
+        add(CoachIDText2);
+        
+        
+         CoachSalaryText2.setBounds(250, 450, 200, 35);
+        CoachSalaryText2.setFont(fontLabel);
+        add(CoachSalaryText2);
+        
         
         Add.addActionListener(new ActionListener() {
             @Override
@@ -145,7 +169,22 @@ public class CoachesGUI extends JFrame{
         Delete.setBounds(300,350,30,30);
         add(Delete);
         
-         ShowAll.setBounds(40,450, 200, 40);
+        
+          Update.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                coaches obj=new coaches();
+                obj.updateSalary(Integer.parseInt(CoachIDText.getText()),Integer.parseInt(CoachSalaryText.getText()));
+                CoachIDText.setText("");
+                     }
+        });
+         Update.setForeground(Color.white);
+        Update.setBounds(500,450,100,30);
+        add(Update);
+        
+        
+        
+         ShowAll.setBounds(40,550, 200, 40);
         Font fontButton=new Font("TimesRoman",Font.BOLD,15);
         ShowAll.setFont(fontButton);
         ShowAll.addActionListener(new ActionListener() {
