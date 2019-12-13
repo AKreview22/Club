@@ -17,7 +17,9 @@ import javax.swing.JOptionPane;
  * @author Ahmed Kamal
  */
 public class LoginFunc {
+    
     private static String logName;
+    
     public void setLogName(String lg){
         logName = lg;
     }

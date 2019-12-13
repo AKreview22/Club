@@ -18,7 +18,9 @@ public class Club {
      */
     public static void main(String[] args) throws IOException {
 //        Login log = new Login();
-       NewClass n=new NewClass();
+     // NewClass n=new NewClass();
+       coaches c = new coaches();
+       c.showAllCoaches();
        //نجحنا !!!!!!!!!!!!!!!!!
        // ConnectionFunction c = new ConnectionFunction();
         

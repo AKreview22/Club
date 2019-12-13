@@ -29,7 +29,7 @@ public class NewClass extends JFrame{
 private static String uName, password;
     
     JTextField username=new JTextField();
-    JTextField pass=new  JTextField();
+    JPasswordField pass=new  JPasswordField();
     JButton Login  = new JButton("LOGIN");
     JLabel UserNameLabel=new JLabel("Username");
     JLabel PasswordLabel=new JLabel("Password");
