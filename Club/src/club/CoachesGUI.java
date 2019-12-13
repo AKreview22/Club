@@ -10,12 +10,14 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -148,23 +150,22 @@ public class CoachesGUI extends JFrame{
         ShowAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                coaches obj=new  coaches();
-                JTable j=new JTable();
-                DefaultTableModel model= (DefaultTableModel)j.getModel();
-                ArrayList<coaches>list=obj.showAllCoaches();
-                JScrollPane js=new JScrollPane();
-                js.setBounds(200, 200, 400, 500);
-                js.setViewportView(j);
-                add(js);
-                j=new JTable(model);
-                Object[]row=new Object[5];
-                for(int i=0;i<list.size();i++){
-                    row[0]=list.get(i).getC_name();
-                    row[1]=list.get(i).getC_id();
-                    row[2]=list.get(i).getClass_id();
-                    row[3]=list.get(i).getC_phone();
-                    row[4]=list.get(i).getC_salary();
-                    model.addRow(row);
+               JFrame frame=new JFrame();
+                frame.setVisible(true);
+                frame. setSize(1650,750);
+                coaches obj=new coaches();
+                obj.ShowAllCoaches();
+                String arr[]= new  String[5];
+                DefaultListModel<String>List=new DefaultListModel<>();
+                JList<String>list=new JList<>(List);
+                JScrollPane scroll=new JScrollPane();
+                scroll.setBounds(200, 200, 400, 500);
+                scroll.setViewportView(list);
+                frame.add(scroll);
+                List.addElement("Name                  ID                Class ID                phone number                 Salary");
+                arr=obj.ShowAllCoaches();
+                for(int i=0;i<5;i++){
+                        List.addElement(arr[i]);
                 }
             }
         });

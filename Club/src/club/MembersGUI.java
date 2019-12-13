@@ -140,6 +140,59 @@ public class MembersGUI extends JFrame{
         ShowAll.setBounds(40,450, 200, 40);
         Font fontButton=new Font("TimesRoman",Font.BOLD,15);
         ShowAll.setFont(fontButton);
+
+
+
+
+ShowAll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                JFrame frame=new JFrame();
+                frame.setVisible(true);
+                frame. setSize(1650,750);
+                Members obj=new Members();
+                obj.ShowAllMembers();
+                String arr[]= new  String[5];
+                DefaultListModel<String>List=new DefaultListModel<>();
+                JList<String>list=new JList<>(List);
+                JScrollPane scroll=new JScrollPane();
+                scroll.setBounds(200, 200, 400, 500);
+                scroll.setViewportView(list);
+                frame.add(scroll);
+                List.addElement("Name                  ID                Class ID                Phone Number");
+                arr=obj.ShowAllMembers();
+                for(int i=0;i<5;i++){
+                        List.addElement(arr[i]);
+                } 
+                
+                
+            }
+        });
+
+
+
+
+
+
+
+
+       
+           add(ShowAll);
+          validate();
+          
+    }
+        }
+
+
+
+
+
+
+
+
+
+
+
 //        ShowAll.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent ae) {
@@ -167,40 +220,3 @@ public class MembersGUI extends JFrame{
 //        
 //            }
 //        });
-
-
-
-ShowAll.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                Members obj=new Members();
-                obj.ShowAllMembers();
-                String arr[]= new  String[5];
-                DefaultListModel<String>List=new DefaultListModel<>();
-                JList<String>list=new JList<>(List);
-                JScrollPane scroll=new JScrollPane();
-                scroll.setViewportView(list);
-                List.addElement("Name                  ID                Class ID                Phone Number");
-                arr=obj.ShowAllMembers();
-                for(int i=0;i<5;i++){
-                        List.addElement(arr[i]);
-                } 
-                scroll.setBounds(200, 200, 400, 500);
-                add(scroll);
-        
-            }
-        });
-
-
-
-
-
-
-
-
-       
-           add(ShowAll);
-          validate();
-          
-    }
-        }

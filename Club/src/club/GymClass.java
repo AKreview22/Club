@@ -59,28 +59,25 @@ public class GymClass {
         } 
     }
         
-                public ArrayList<GymClass> ShowAllClasses()
-    {
-
-               ArrayList<GymClass> classList = new ArrayList<>();
-               
-               try {
+        public String[] ShowAllClass(){
+                    String arr[]=new String[5];
+                    try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();
-                   ResultSet rs= st.executeQuery("SELECT * FROM coaches");
-                   GymClass classes ;
+                   ResultSet rs= st.executeQuery("SELECT * FROM members");
+                  int i=0;
                    while(rs.next()){
-                       classes=new GymClass(rs.getString(1),rs.getInt(2)
-                               ,rs.getInt(3));
-                       classList.add(classes);
+                       arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3))+"                "+Integer.toString(rs.getInt(4));
+                       i++;
                    }  
           conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
-        }  
-               return classList;
-    }
+        }    
+                    return arr;
+                }
+              
 
     public String getClass_name() {
         return class_name;
@@ -106,4 +103,31 @@ public class GymClass {
         this.class_hours = class_hours;
     }
     
-}
+} 
+
+
+
+
+
+//public ArrayList<GymClass> ShowAllClasses()
+//    {
+//
+//               ArrayList<GymClass> classList = new ArrayList<>();
+//               
+//               try {
+//                   Connection conn = new ConnectionFunction().connect();
+//                   Statement st = conn.createStatement();
+//                   ResultSet rs= st.executeQuery("SELECT * FROM coaches");
+//                   GymClass classes ;
+//                   while(rs.next()){
+//                       classes=new GymClass(rs.getString(1),rs.getInt(2)
+//                               ,rs.getInt(3));
+//                       classList.add(classes);
+//                   }  
+//          conn.close(); 
+//        } catch (Exception e) { 
+//            System.err.println("Got an exception! "); 
+//            System.err.println(e.getMessage()); 
+//        }  
+//               return classList;
+//    }

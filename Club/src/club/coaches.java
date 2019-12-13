@@ -62,28 +62,26 @@ public class coaches {
         } 
     }
         
-         public ArrayList<coaches> showAllCoaches()
-    {
-  
-               ArrayList<coaches> coachesList = new ArrayList<>();
-               
-               try {
+ public String[] ShowAllCoaches(){
+                    String arr[]=new String[5];
+                    try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();
-                   ResultSet rs= st.executeQuery("SELECT * FROM coaches");
-                   coaches coach ;
+                   ResultSet rs= st.executeQuery("SELECT * FROM members");
+                  int i=0;
                    while(rs.next()){
-                       coach=new coaches(rs.getString(1),rs.getInt(2)
-                               ,rs.getInt(3),rs.getInt(4),rs.getInt(5));
-                       coachesList.add(coach);
+                       arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3))+"                "+Integer.toString(rs.getInt(4))+"                "+Integer.toString(rs.getInt(5));
+
+                       i++;
                    }  
           conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
         }    
-               return coachesList;
-    }
+                    return arr;
+                }
+
          
          public void updateSalary(int c_id , int c_salary)
          {
@@ -143,3 +141,39 @@ public class coaches {
 
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//         public ArrayList<coaches> showAllCoaches()
+//    {
+//  
+//               ArrayList<coaches> coachesList = new ArrayList<>();
+//               
+//               try {
+//                   Connection conn = new ConnectionFunction().connect();
+//                   Statement st = conn.createStatement();
+//                   ResultSet rs= st.executeQuery("SELECT * FROM coaches");
+//                   coaches coach ;
+//                   while(rs.next()){
+//                       coach=new coaches(rs.getString(1),rs.getInt(2)
+//                               ,rs.getInt(3),rs.getInt(4),rs.getInt(5));
+//                       coachesList.add(coach);
+//                   }  
+//          conn.close(); 
+//        } catch (Exception e) { 
+//            System.err.println("Got an exception! "); 
+//            System.err.println(e.getMessage()); 
+//        }    
+//               return coachesList;
+//    }
