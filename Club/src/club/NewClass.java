@@ -24,6 +24,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * @author marti
  */
 public class NewClass extends JFrame{
+    
 private static String uName, password;
     
     JTextField username=new JTextField();
