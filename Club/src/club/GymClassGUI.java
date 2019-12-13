@@ -45,7 +45,9 @@ public class GymClassGUI extends JFrame{
     JButton ShowAll=new JButton("Show all classes");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
-    
+    DefaultListModel<String>List=new DefaultListModel<>();
+    JList<String>list=new JList<>(List);
+    JScrollPane scroll=new JScrollPane();
     public GymClassGUI (){
         setTitle("Gym Classes");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -133,17 +135,15 @@ public class GymClassGUI extends JFrame{
                 frame.setVisible(true);
                 frame. setSize(1650,750);
                 GymClass obj=new GymClass();
-                obj.ShowAllClass();
-                String arr[]= new  String[5];
-                DefaultListModel<String>List=new DefaultListModel<>();
-                JList<String>list=new JList<>(List);
-                JScrollPane scroll=new JScrollPane();
+                
+                String arr[]= new  String[50];
+               
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
                 frame.add(scroll);
                 List.addElement("Name                  ID                Hours");
                 arr=obj.ShowAllClass();
-                for(int i=0;i<5;i++){
+                for(int i=0;i<50;i++){
                         List.addElement(arr[i]);
                 } 
             }

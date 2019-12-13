@@ -48,6 +48,9 @@ public class CoachesGUI extends JFrame{
     JButton ShowAll=new JButton("Show all Coaches");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
+    DefaultListModel<String>List=new DefaultListModel<>();
+    JList<String>list=new JList<>(List);
+    JScrollPane scroll=new JScrollPane();
     public CoachesGUI (){
         setTitle("Coaches");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -156,9 +159,6 @@ public class CoachesGUI extends JFrame{
                 coaches obj=new coaches();
                 obj.ShowAllCoaches();
                 String arr[]= new  String[5];
-                DefaultListModel<String>List=new DefaultListModel<>();
-                JList<String>list=new JList<>(List);
-                JScrollPane scroll=new JScrollPane();
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
                 frame.add(scroll);

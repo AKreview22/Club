@@ -60,7 +60,7 @@ public class GymClass {
     }
         
         public String[] ShowAllClass(){
-                    String arr[]=new String[5];
+                    String arr[]=new String[50];
                     try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();
@@ -70,6 +70,8 @@ public class GymClass {
                        arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3))+"                "+Integer.toString(rs.getInt(4));
                        i++;
                    }  
+                   
+                   
           conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -102,7 +104,7 @@ public class GymClass {
     public void setClass_hours(int class_hours) {
         this.class_hours = class_hours;
     }
-    
+
 } 
 
 
