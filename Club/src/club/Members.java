@@ -6,6 +6,7 @@
 package club;
 
 import java.sql.*;
+import java.util.*;
 
 /**
  *
@@ -21,15 +22,22 @@ public class Members {
     public Members() {
     }
 
+    public Members(String m_name, int m_id, int class_id, int m_phone) {
+        this.m_name = m_name;
+        this.m_id = m_id;
+        this.class_id = class_id;
+        this.m_phone = m_phone;
+    }
+    
+
     public void addMembers( String m_name , int class_id , int m_phone)
     {
            try { 
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection conn = DriverManager.getConnection(url,"",""); 
+             Connection conn = new ConnectionFunction().connect();
             Statement st = conn.createStatement(); 
             st.executeUpdate("INSERT INTO members " + 
-                "VALUES (" + m_name+ "," + class_id + "," + m_phone + ")") ; 
-             //I REMOVED THE ID FROM HERE AS I MADE IT AN IDENTITY IN THE DATABASE
+                "VALUES (" + "'" + m_name + "'" + "," + class_id + "," + m_phone + ")") ;
+            //I REMOVED THE ID FROM HERE AS I MADE IT AN IDENTITY IN THE DATABASE
             conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
@@ -40,8 +48,7 @@ public class Members {
         public void deleteMembers(int m_id)
     {
            try { 
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection conn = DriverManager.getConnection(url,"",""); 
+            Connection conn = new ConnectionFunction().connect();
             Statement st = conn.createStatement(); 
             st.executeUpdate("DELETE FROM members " + 
                 "WHERE m_id = " + m_id) ;  
@@ -54,16 +61,24 @@ public class Members {
         
                 public void ShowAllMembers()
     {
-           try { 
-            String url="jdbc:sqlserver://localhost:1433;databaseName=gymdb";
-            Connection conn = DriverManager.getConnection(url,"",""); 
-            Statement st = conn.createStatement(); 
-            st.executeUpdate("SELECT * from members ;") ;  
-            conn.close(); 
+        
+               ArrayList<Members> membersList = new ArrayList<>();
+               
+               try {
+                   Connection conn = new ConnectionFunction().connect();
+                   Statement st = conn.createStatement();
+                   ResultSet rs= st.executeQuery("SELECT * FROM members");
+                   Members member ;
+                   while(rs.next()){
+                       member=new Members(rs.getString(1),rs.getInt(2)
+                               ,rs.getInt(3),rs.getInt(4));
+                       membersList.add(member);
+                   }  
+          conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
-        } 
+        }             
     }
 
 
