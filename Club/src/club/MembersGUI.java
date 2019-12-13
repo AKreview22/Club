@@ -184,12 +184,9 @@ ShowAll.addActionListener(new ActionListener() {
                 arr=obj.ShowAllMembers();
                 for(int i=0;i<5;i++){
                 List.addElement(arr[i]);
+                } 
                 scroll.setBounds(200, 200, 400, 500);
                 add(scroll);
-                
-                
-                
-                }
         
             }
         });
