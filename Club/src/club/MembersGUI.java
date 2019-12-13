@@ -33,8 +33,8 @@ public class MembersGUI extends JFrame{
     JLabel MemberIDLabel=new JLabel("ID");
     JLabel MemberClasseLabel=new JLabel("Class");
     JLabel MemberPhoneLabel=new JLabel("Phone Number");
-    Icon AddIcon =new ImageIcon("D:\\Study\\Database\\add.png");
-    Icon DeleteIcon =new ImageIcon("D:\\Study\\Database\\delete.jpg");
+    Icon AddIcon =new ImageIcon("images(2).png");
+    Icon DeleteIcon =new ImageIcon("images(3).png");
     JButton Add=new JButton(AddIcon);
     JButton Delete=new JButton(DeleteIcon);
     JButton ShowAll=new JButton("Show all members");
@@ -45,7 +45,7 @@ public class MembersGUI extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setSize(1650,750);
-        setContentPane(new JLabel(new ImageIcon("D:\\Study\\Database\\Design.jpg")));
+        setContentPane(new JLabel(new ImageIcon("IMG-20191201-WA0008.png")));
         
         Members.setForeground(Color.white);
         Font f=new Font("TimesRoman",Font.BOLD,60);
