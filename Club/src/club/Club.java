@@ -17,11 +17,10 @@ public class Club {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        MembersGUI m = new  MembersGUI();
-        //comment ahoooooooooo
         
-        //comment ahoooooooooo version 2
-
+        //MembersGUI m = new  MembersGUI();
+        //GymClassGUI m = new  GymClassGUI();
+          CoachesGUI m = new CoachesGUI();
     }
     
 }
