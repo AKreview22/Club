@@ -164,7 +164,7 @@ public class CoachesGUI extends JFrame{
                 scroll.setViewportView(list);
                 frame.add(scroll);
                 List.addElement("Name                  ID                Class ID                phone number                 Salary");
-                
+                arr=obj.ShowAllCoaches();
                 for(int i=0;i<5;i++){
                         List.addElement(arr[i]);
                 }

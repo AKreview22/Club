@@ -67,7 +67,7 @@ public class GymClass {
                    ResultSet rs= st.executeQuery("SELECT * FROM class");
                   int i=0;
                    while(rs.next()){
-                       arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3))+"                "+Integer.toString(rs.getInt(4));
+                       arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3));
                        i++;
                    }  
                    
