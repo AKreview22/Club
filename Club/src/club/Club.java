@@ -17,8 +17,7 @@ public class Club {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        coaches c = new coaches();
-        c.updateSalary(1, 6000);
+        MembersGUI m = new  MembersGUI();
     }
     
 }

@@ -9,13 +9,17 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -103,37 +107,60 @@ public class MembersGUI extends JFrame{
         add(MemberClassText);
         
         
-       Add.addActionListener(new ActionListener() {
-           @Override
-           public void actionPerformed(ActionEvent ae) {
+        Add.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
                 Members obj=new Members();
-               obj.addMembers(MemberNameText.getText(),Integer.parseInt(MemberClassText.getText()),Integer.parseInt(MemberPhoneText.getText()));
-           }
-       });
+                obj.addMembers(MemberNameText.getText(),Integer.parseInt(MemberClassText.getText()),Integer.parseInt(MemberPhoneText.getText()));
+            }
+        });
         Add.setBounds(860,250,30,30);
         add(Add);
         
         
          Delete.addActionListener(new ActionListener() {
-           @Override
-           public void actionPerformed(ActionEvent ae) {
-               Members obj=new Members();
-                obj.deleteMembers(Integer.parseInt(MemberIDText.getText()));           }
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Members obj=new Members();
+                 obj.deleteMembers(Integer.parseInt(MemberIDText.getText()));
+            }
         });
         Delete.setBounds(300,350,30,30);
         add(Delete);
         
+        
+        
         ShowAll.setBounds(40,450, 200, 40);
         Font fontButton=new Font("TimesRoman",Font.BOLD,15);
         ShowAll.setFont(fontButton);
-       ShowAll.addActionListener(new ActionListener() {
-          @Override
+        ShowAll.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
                 Members obj=new Members();
-               obj.ShowAllMembers();
-           }
-      });
+                obj.ShowAllMembers();
+                JTable j=new JTable();
+                DefaultTableModel model= (DefaultTableModel)j.getModel();
+                ArrayList<Members>list=new ArrayList<>();
+                JScrollPane js=new JScrollPane();
+                js.setBounds(200, 200, 400, 500);
+                js.setViewportView(j);
+                add(js);
+                j=new JTable(model);
+                
+                
+                
+                Object[]row=new Object[4];
+                for(int i=0;i<list.size();i++){
+                    row[0]=list.get(i).getM_name();
+                    row[1]=list.get(i).getM_id();
+                    row[2]=list.get(i).getClass_id();
+                    row[3]=list.get(i).getM_phone();
+                    model.addRow(row);
+                }
         
+            }
+        });
+       
            add(ShowAll);
           validate();
           
