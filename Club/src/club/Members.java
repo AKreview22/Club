@@ -59,7 +59,7 @@ public class Members {
         } 
     }
         
-                public void ShowAllMembers()
+                public ArrayList<Members> ShowAllMembers()
     {
         
                ArrayList<Members> membersList = new ArrayList<>();
@@ -78,7 +78,8 @@ public class Members {
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
-        }             
+        }    
+               return membersList;
     }
 
 
