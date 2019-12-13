@@ -22,7 +22,7 @@ import javax.swing.JTextField;
  * @author marti
  */
 public class MembersGUI extends JFrame{
-    
+    //tessssssssssssst
         JPanel jp=new JPanel();
     JLabel Members = new JLabel("Members");
     JTextField MemberNameText=new JTextField();
