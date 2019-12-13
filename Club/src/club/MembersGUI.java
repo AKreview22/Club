@@ -47,9 +47,7 @@ public class MembersGUI extends JFrame{
     JButton ShowAll=new JButton("Show all members");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
-    DefaultListModel<String>List=new DefaultListModel<>();
-    JList<String>list=new JList<>(List);
-    JScrollPane scroll=new JScrollPane();
+   
     public MembersGUI (){
         setTitle("Members");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -154,6 +152,9 @@ ShowAll.addActionListener(new ActionListener() {
                 frame. setSize(1650,750);
                 Members obj=new Members();
                 obj.ShowAllMembers();
+                 DefaultListModel<String>List=new DefaultListModel<>();
+    JList<String>list=new JList<>(List);
+    JScrollPane scroll=new JScrollPane();
                 String arr[]= new  String[5];
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
