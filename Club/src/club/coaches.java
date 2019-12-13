@@ -63,7 +63,7 @@ public class coaches {
     }
         
  public String[] ShowAllCoaches(){
-                    String arr[]=new String[5];
+                    String arr[]=new String[50];
                     try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();

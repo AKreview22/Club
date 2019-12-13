@@ -61,7 +61,7 @@ public class Members {
         
         
                 public String[] ShowAllMembers(){
-                    String arr[]=new String[5];
+                    String arr[]=new String[50];
                     try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();

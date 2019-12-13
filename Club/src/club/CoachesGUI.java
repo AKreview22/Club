@@ -158,8 +158,7 @@ public class CoachesGUI extends JFrame{
                 DefaultListModel<String>List=new DefaultListModel<>();
                 JList<String>list=new JList<>(List);
                 JScrollPane scroll=new JScrollPane();
-                obj.ShowAllCoaches();
-                String arr[]= new  String[5];
+                String arr[]= new  String[50];
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
                 frame.add(scroll);
