@@ -92,7 +92,7 @@ public class Members {
                    ResultSet rs= st.executeQuery("SELECT * FROM members");
                   int i=0;
                    while(rs.next()){
-                       arr[i]=rs.getString(1)+"                "+rs.getInt(2)+"                "+rs.getInt(3)+"                "+rs.getInt(4);
+                       arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3))+"                "+Integer.toString(rs.getInt(4));
                        i++;
                    }  
           conn.close(); 
