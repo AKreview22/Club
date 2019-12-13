@@ -175,7 +175,7 @@ ShowAll.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 Members obj=new Members();
                 obj.ShowAllMembers();
-                String arr[]=null;
+                String arr[]= new  String[5];
                 DefaultListModel<String>List=new DefaultListModel<>();
                 JList<String>list=new JList<>(List);
                 JScrollPane scroll=new JScrollPane();
