@@ -137,7 +137,6 @@ public class GymClassGUI extends JFrame{
                 JList<String>list=new JList<>(List);
                 JScrollPane scroll=new JScrollPane();
                 String arr[]= new  String[50];
-               
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
                 frame.add(scroll);

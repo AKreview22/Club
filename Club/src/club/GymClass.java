@@ -64,7 +64,7 @@ public class GymClass {
                     try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();
-                   ResultSet rs= st.executeQuery("SELECT * FROM members");
+                   ResultSet rs= st.executeQuery("SELECT * FROM class");
                   int i=0;
                    while(rs.next()){
                        arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+Integer.toString(rs.getInt(3))+"                "+Integer.toString(rs.getInt(4));
