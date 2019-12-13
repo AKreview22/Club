@@ -59,7 +59,7 @@ public class GymClass {
         } 
     }
         
-                public void ShowAllClasses()
+                public ArrayList<GymClass> ShowAllClasses()
     {
 
                ArrayList<GymClass> classList = new ArrayList<>();
@@ -79,6 +79,7 @@ public class GymClass {
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
         }  
+               return classList;
     }
 
     public String getClass_name() {

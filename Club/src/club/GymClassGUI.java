@@ -101,6 +101,8 @@ public class GymClassGUI extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 GymClass obj=new GymClass();
                 obj.addClasses(ClassesNameText.getText(),Integer.parseInt(ClassesHoursText.getText()));
+                ClassesNameText.setText("");
+                ClassesHoursLabel.setText("");
             }
         });
         Add.setBounds(860,250,30,30);
@@ -112,6 +114,7 @@ public class GymClassGUI extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 GymClass obj=new GymClass();
                 obj.deleteClasses(Integer.parseInt(ClassesIDText.getText()));
+                ClassesIDText.setText("");
 //         
             }
         });
@@ -124,18 +127,15 @@ public class GymClassGUI extends JFrame{
         ShowAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                
+                GymClass obj=new GymClass();
                 JTable j=new JTable();
                 DefaultTableModel model= (DefaultTableModel)j.getModel();
-                ArrayList<GymClass>list=new ArrayList<>();
+                ArrayList<GymClass>list=obj.ShowAllClasses();
                 JScrollPane js=new JScrollPane();
                 js.setBounds(200, 200, 400, 500);
                 js.setViewportView(j);
                 add(js);
                 j=new JTable(model);
-                
-                
-                
                 Object[]row=new Object[3];
                 for(int i=0;i<list.size();i++){
                     row[0]=list.get(i).getClass_name();

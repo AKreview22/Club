@@ -120,9 +120,11 @@ public class CoachesGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae) {
                 coaches obj=new coaches();
-                obj.addCoaches(CoachNameText.getText(),
-                        Integer.parseInt(CoachClassText.getText()),
-                        Integer.parseInt(CoachPhoneText.getText()),Integer.parseInt(CoachSalaryText.getText()));
+                obj.addCoaches(CoachNameText.getText(),Integer.parseInt(CoachClassText.getText()),Integer.parseInt(CoachPhoneText.getText()),Integer.parseInt(CoachSalaryText.getText()));
+                CoachClassText.setText("");
+                CoachNameText.setText("");
+                CoachPhoneText.setText("");
+                CoachSalaryText.setText("");
             }
        });
         Add.setBounds(1100,250,30,30);
@@ -134,6 +136,7 @@ public class CoachesGUI extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 coaches obj=new coaches();
                 obj.deleteCoaches(Integer.parseInt(CoachIDText.getText()));
+                CoachIDText.setText("");
                      }
         });
         Delete.setBounds(300,350,30,30);
@@ -145,18 +148,15 @@ public class CoachesGUI extends JFrame{
         ShowAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                
+                coaches obj=new  coaches();
                 JTable j=new JTable();
                 DefaultTableModel model= (DefaultTableModel)j.getModel();
-                ArrayList<coaches>list=new ArrayList<>();
+                ArrayList<coaches>list=obj.showAllCoaches();
                 JScrollPane js=new JScrollPane();
                 js.setBounds(200, 200, 400, 500);
                 js.setViewportView(j);
                 add(js);
                 j=new JTable(model);
-                
-                
-                
                 Object[]row=new Object[5];
                 for(int i=0;i<list.size();i++){
                     row[0]=list.get(i).getC_name();

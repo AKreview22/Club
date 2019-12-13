@@ -112,6 +112,10 @@ public class MembersGUI extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 Members obj=new Members();
                 obj.addMembers(MemberNameText.getText(),Integer.parseInt(MemberClassText.getText()),Integer.parseInt(MemberPhoneText.getText()));
+                MemberNameText.setText("");
+                MemberPhoneText.setText("");
+                MemberClassText.setText("");
+                
             }
         });
         Add.setBounds(860,250,30,30);
@@ -123,6 +127,7 @@ public class MembersGUI extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 Members obj=new Members();
                  obj.deleteMembers(Integer.parseInt(MemberIDText.getText()));
+                 MemberIDText.setText("");
             }
         });
         Delete.setBounds(300,350,30,30);
@@ -140,7 +145,7 @@ public class MembersGUI extends JFrame{
                 obj.ShowAllMembers();
                 JTable j=new JTable();
                 DefaultTableModel model= (DefaultTableModel)j.getModel();
-                ArrayList<Members>list=new ArrayList<>();
+                ArrayList<Members>list=obj.ShowAllMembers();
                 JScrollPane js=new JScrollPane();
                 js.setBounds(200, 200, 400, 500);
                 js.setViewportView(j);

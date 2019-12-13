@@ -62,7 +62,7 @@ public class coaches {
         } 
     }
         
-         public void showAllCoaches()
+         public ArrayList<coaches> showAllCoaches()
     {
   
                ArrayList<coaches> coachesList = new ArrayList<>();
@@ -81,7 +81,8 @@ public class coaches {
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
-        }             
+        }    
+               return coachesList;
     }
          
          public void updateSalary(int c_id , int c_salary)
