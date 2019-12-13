@@ -24,7 +24,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  *
  * @author marti
  */
-public class NewClass extends JFrame{
+public class LoginGUI extends JFrame{
     
 private static String uName, password;
     
@@ -37,7 +37,7 @@ private static String uName, password;
     
     
     
-     public NewClass() throws IOException{
+     public LoginGUI() throws IOException{
         setTitle("Login");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -58,7 +58,7 @@ private static String uName, password;
         password = pass.getText();
        boolean b =new LoginFunc().checkLogin(uName,password);
        if(b== true){
-           NewClass.this.hide();
+           LoginGUI.this.hide();
        }
     }                             
  
