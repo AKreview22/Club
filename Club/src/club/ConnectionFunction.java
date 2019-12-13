@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Shan Wijenayaka
+ * @author Ahmed Kamal
  */
 public class ConnectionFunction {
     private Connection DBConnection;
