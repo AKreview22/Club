@@ -17,14 +17,7 @@ public class Club {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-//        Login log = new Login();
-     // NewClass n=new NewClass();
-       //MembersGUI m = new MembersGUI() ;
-        //coaches c = new coaches();
-        //c.showAllCoaches();
-       //نجحنا !!!!!!!!!!!!!!!!!
-       // ConnectionFunction c = new ConnectionFunction();
-        
+// ايه يا حبى ???
     }
     
 }
