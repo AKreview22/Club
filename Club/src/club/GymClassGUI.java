@@ -35,7 +35,7 @@ public class GymClassGUI extends JFrame{
    
     JLabel ClassesNameLabel=new JLabel("Name");
     JLabel ClassesIDLabel=new JLabel("ID");
-    JLabel ClassesHoursLabel=new JLabel("Class Hours");
+    JLabel ClassesHoursLabel=new JLabel("Hours");
     Icon AddIcon =new ImageIcon("images(2).png");
     Icon DeleteIcon =new ImageIcon("images(3).png");
     JButton Add=new JButton(AddIcon);
