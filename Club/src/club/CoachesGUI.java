@@ -33,10 +33,12 @@ public class CoachesGUI extends JFrame{
     JTextField CoachIDText=new JTextField();
     JTextField CoachClassText=new JTextField();
     JTextField CoachPhoneText=new JTextField();
+    JTextField CoachSalaryText=new JTextField();
     JLabel CoachNameLabel=new JLabel("Name");
     JLabel CoachIDLabel=new JLabel("ID");
     JLabel CoachClasseLabel=new JLabel("Class");
     JLabel CoachPhoneLabel=new JLabel("Phone Number");
+     JLabel CoachSalaryLabel=new JLabel("Salary");
     Icon AddIcon =new ImageIcon("images(2).png");
     Icon DeleteIcon =new ImageIcon("images(3).png");
     JButton Add=new JButton(AddIcon);
@@ -104,15 +106,26 @@ public class CoachesGUI extends JFrame{
         CoachClassText.setFont(fontText);
         add(CoachClassText);
         
-//        
-//        Add.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent ae) {
-//                coaches obj=new coaches();
-//                obj.addCoaches(CoachNameText.getText(),Integer.parseInt(CoachClassText.getText()),Integer.parseInt(CoachPhoneText.getText()));
-//            }
-//        });
-        Add.setBounds(860,250,30,30);
+         CoachSalaryLabel.setForeground(Color.white);
+        CoachSalaryLabel.setBounds(860, 200,100 , 30);
+        CoachSalaryLabel.setFont(fontLabel);
+        add(CoachSalaryLabel);   
+        
+         CoachSalaryText.setBounds(860, 250,200 , 35);
+        CoachSalaryText.setFont(fontText);
+        add(CoachSalaryText);
+        
+        
+        Add.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                coaches obj=new coaches();
+                obj.addCoaches(CoachNameText.getText(),
+                        Integer.parseInt(CoachClassText.getText()),
+                        Integer.parseInt(CoachPhoneText.getText()),Integer.parseInt(CoachSalaryText.getText()));
+            }
+       });
+        Add.setBounds(1100,250,30,30);
         add(Add);
 //        
         

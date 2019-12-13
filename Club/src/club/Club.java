@@ -17,7 +17,7 @@ public class Club {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        MembersGUI m = new  MembersGUI();
+        GymClassGUI m = new  GymClassGUI();
     }
     
 }
