@@ -10,11 +10,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -138,33 +140,74 @@ public class MembersGUI extends JFrame{
         ShowAll.setBounds(40,450, 200, 40);
         Font fontButton=new Font("TimesRoman",Font.BOLD,15);
         ShowAll.setFont(fontButton);
-        ShowAll.addActionListener(new ActionListener() {
+//        ShowAll.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent ae) {
+//                Members obj=new Members();
+//                obj.ShowAllMembers();
+//                JTable j=new JTable();
+//                DefaultTableModel model= (DefaultTableModel)j.getModel();
+//                ArrayList<Members>list=obj.ShowAllMembers();
+//                JScrollPane js=new JScrollPane();
+//                js.setBounds(200, 200, 400, 500);
+//                js.setViewportView(j);
+//                add(js);
+//                j=new JTable(model);
+//                
+//                
+//                
+//                Object[]row=new Object[4];
+//                for(int i=0;i<list.size();i++){
+//                    row[0]=list.get(i).getM_name();
+//                    row[1]=list.get(i).getM_id();
+//                    row[2]=list.get(i).getClass_id();
+//                    row[3]=list.get(i).getM_phone();
+//                    model.addRow(row);
+//                }
+//        
+//            }
+//        });
+
+
+
+ShowAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 Members obj=new Members();
                 obj.ShowAllMembers();
-                JTable j=new JTable();
-                DefaultTableModel model= (DefaultTableModel)j.getModel();
-                ArrayList<Members>list=obj.ShowAllMembers();
+                String arr[]=null;
+                
+                 DefaultListModel<String>List=new DefaultListModel<>();
+                JList<String>list=new JList<>(List);
+                JScrollPane scroll=new JScrollPane();
+                scroll.setViewportView(list);
+                List.addElement("Name                  ID                Class ID                Phone Number");
+                
+                         arr=obj.ShowAllMembers();
+                        
+                         for(int i=0;i<5;i++){
+                        List.addElement(arr[i]);
+                
+                
                 JScrollPane js=new JScrollPane();
                 js.setBounds(200, 200, 400, 500);
-                js.setViewportView(j);
+                js.setViewportView(list);
                 add(js);
-                j=new JTable(model);
                 
                 
                 
-                Object[]row=new Object[4];
-                for(int i=0;i<list.size();i++){
-                    row[0]=list.get(i).getM_name();
-                    row[1]=list.get(i).getM_id();
-                    row[2]=list.get(i).getClass_id();
-                    row[3]=list.get(i).getM_phone();
-                    model.addRow(row);
                 }
         
             }
         });
+
+
+
+
+
+
+
+
        
            add(ShowAll);
           validate();

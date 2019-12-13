@@ -59,30 +59,59 @@ public class Members {
         } 
     }
         
-                public ArrayList<Members> ShowAllMembers()
-    {
+//                public ArrayList<Members> ShowAllMembers()
+//    {
+//        
+//               ArrayList<Members> membersList = new ArrayList<>();
+//               
+//               try {
+//                   Connection conn = new ConnectionFunction().connect();
+//                   Statement st = conn.createStatement();
+//                   ResultSet rs= st.executeQuery("SELECT * FROM members");
+//                   Members member ;
+//                   while(rs.next()){
+//                       member=new Members(rs.getString(1),rs.getInt(2)
+//                               ,rs.getInt(3),rs.getInt(4));
+//                       membersList.add(member);
+//                   }  
+//          conn.close(); 
+//        } catch (Exception e) { 
+//            System.err.println("Got an exception! "); 
+//            System.err.println(e.getMessage()); 
+//        }    
+//               return membersList;
+//    }
+
+
         
-               ArrayList<Members> membersList = new ArrayList<>();
-               
-               try {
+                public String[] ShowAllMembers(){
+                    String arr[]=null;
+                    try {
                    Connection conn = new ConnectionFunction().connect();
                    Statement st = conn.createStatement();
                    ResultSet rs= st.executeQuery("SELECT * FROM members");
-                   Members member ;
+                  int i=0;
                    while(rs.next()){
-                       member=new Members(rs.getString(1),rs.getInt(2)
-                               ,rs.getInt(3),rs.getInt(4));
-                       membersList.add(member);
+                       arr[i]=rs.getString(1)+"                "+rs.getInt(2)+"                "+rs.getInt(3)+"                "+rs.getInt(4);
+                       i++;
                    }  
           conn.close(); 
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
         }    
-               return membersList;
-    }
+                    return arr;
+                }
 
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
     public String getM_name() {
         return m_name;
     }
