@@ -26,7 +26,7 @@ public class LoginFunc {
     }
     public boolean checkLogin(String name, String password){
         Connection conn = new ConnectionFunction().connect();
-        String sql = "select * from login where name = ? and pword =? ";
+        String sql = "select * from admins where admin_username = ? and admin_password =? ";
         try{
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,name);
