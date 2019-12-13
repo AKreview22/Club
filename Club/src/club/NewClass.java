@@ -27,24 +27,25 @@ public class NewClass extends JFrame{
     
     JTextField username=new JTextField();
     JTextField pass=new  JTextField();
-    JButton Login  = new JButton();
-    
+    JButton Login  = new JButton("LOGIN");
+    JLabel UserNameLabel=new JLabel("Username");
+    JLabel PasswordLabel=new JLabel("Password");
     JPanel jp=new JPanel();
     
     
     
      public NewClass() throws IOException{
-        setTitle("Log In");
+        setTitle("Login");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setSize(1650,750);
         setContentPane(new JLabel(new ImageIcon("IMG-20191201-WA0008.png")));
         
-        
-        
-        username.setBounds(825, 300, 130, 30);
-        pass.setBounds(825, 400, 130, 30);
-        Login.setBounds(825, 500, 130, 30);
+        UserNameLabel.setBounds(500, 300, 100, 30);
+         PasswordLabel.setBounds(500, 400, 100, 30);
+        username.setBounds(600, 300, 170, 30);
+        pass.setBounds(600, 400, 170, 30);
+        Login.setBounds(650, 450, 80, 40);
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -76,10 +77,12 @@ public class NewClass extends JFrame{
  
            
         });
-  add(pass);
- add(username);
-  add(Login);
- validate();
+        add(PasswordLabel);
+        add(UserNameLabel);
+        add(pass);
+        add(username);
+        add(Login);
+        validate();
 }
     
 }
