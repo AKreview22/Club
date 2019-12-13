@@ -5,6 +5,7 @@
  */
 package club;
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,10 +42,12 @@ private static String uName, password;
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setSize(1650,750);
-        setContentPane(new JLabel(new ImageIcon("IMG-20191201-WA0008.png")));
+        setContentPane(new JLabel(new ImageIcon("D:\\Study\\Database\\Design.jpg")));
         
         UserNameLabel.setBounds(500, 300, 100, 30);
+        UserNameLabel.setForeground(Color.white);
          PasswordLabel.setBounds(500, 400, 100, 30);
+         PasswordLabel.setForeground(Color.white);
         username.setBounds(600, 300, 170, 30);
         pass.setBounds(600, 400, 170, 30);
         Login.setBounds(650, 450, 80, 40);
