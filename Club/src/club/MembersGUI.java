@@ -151,10 +151,10 @@ ShowAll.addActionListener(new ActionListener() {
                 frame.setVisible(true);
                 frame. setSize(1650,750);
                 Members obj=new Members();
-                obj.ShowAllMembers();
-                 DefaultListModel<String>List=new DefaultListModel<>();
-    JList<String>list=new JList<>(List);
-    JScrollPane scroll=new JScrollPane();
+                
+                DefaultListModel<String>List=new DefaultListModel<>();
+                JList<String>list=new JList<>(List);
+                JScrollPane scroll=new JScrollPane();
                 String arr[]= new  String[5];
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
