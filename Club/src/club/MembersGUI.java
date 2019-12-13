@@ -176,23 +176,16 @@ ShowAll.addActionListener(new ActionListener() {
                 Members obj=new Members();
                 obj.ShowAllMembers();
                 String arr[]=null;
-                
-                 DefaultListModel<String>List=new DefaultListModel<>();
+                DefaultListModel<String>List=new DefaultListModel<>();
                 JList<String>list=new JList<>(List);
                 JScrollPane scroll=new JScrollPane();
                 scroll.setViewportView(list);
                 List.addElement("Name                  ID                Class ID                Phone Number");
-                
-                         arr=obj.ShowAllMembers();
-                        
-                         for(int i=0;i<5;i++){
-                        List.addElement(arr[i]);
-                
-                
-                JScrollPane js=new JScrollPane();
-                js.setBounds(200, 200, 400, 500);
-                js.setViewportView(list);
-                add(js);
+                arr=obj.ShowAllMembers();
+                for(int i=0;i<5;i++){
+                List.addElement(arr[i]);
+                scroll.setBounds(200, 200, 400, 500);
+                add(scroll);
                 
                 
                 
