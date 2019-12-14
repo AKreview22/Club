@@ -58,7 +58,13 @@ private static String uName, password;
         password = pass.getText();
        boolean b =new LoginFunc().checkLogin(uName,password);
        if(b== true){
-           LoginGUI.this.hide();
+           
+           JoinGUI j=new JoinGUI();
+           j.setVisible(true);
+           dispose();
+       }
+       else{
+           username.setText("");
        }
     }                             
  

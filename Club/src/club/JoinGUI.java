@@ -7,6 +7,9 @@ package club;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -27,7 +30,7 @@ public class JoinGUI extends JFrame {
     JButton classes=new JButton("classes");
     JButton InnerJoin=new JButton("class-member inner join");
     JButton OuterJoin=new JButton("class-member outer join");
-
+    JButton back=new JButton();
     
     public JoinGUI(){
           setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -126,7 +129,22 @@ public class JoinGUI extends JFrame {
                 
             }
         });
-        
+       
+            back.setBounds(0, 0, 30, 30);
+        add(back);
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    LoginGUI j=new LoginGUI(); 
+                    j.setVisible(true);
+                    dispose();
+                } catch (IOException ex) {
+                    Logger.getLogger(JoinGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        });
         
     
     }
