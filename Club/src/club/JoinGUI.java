@@ -103,7 +103,7 @@ public class JoinGUI extends JFrame {
         });
            
            
-           InnerJoin.addActionListener(new ActionListener() {
+           OuterJoin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 JFrame frame=new JFrame();
