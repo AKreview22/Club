@@ -44,6 +44,7 @@ public class MembersGUI extends JFrame{
     Icon DeleteIcon =new ImageIcon("D:\\Study\\Database\\delete.jpg");
     JButton Add=new JButton(AddIcon);
     JButton Delete=new JButton(DeleteIcon);
+    JButton back=new JButton();
     JButton ShowAll=new JButton("Show all members");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
@@ -167,7 +168,16 @@ ShowAll.addActionListener(new ActionListener() {
                 
             }
         });
-
+        back.setBounds(0, 0, 30, 30);
+        add(back);
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               JoinGUI j=new JoinGUI();
+               j.setVisible(true);
+               dispose();
+            }
+        });
 
 
 
@@ -180,6 +190,10 @@ ShowAll.addActionListener(new ActionListener() {
           validate();
           
     }
+    
+    
+
+
         }
 
 

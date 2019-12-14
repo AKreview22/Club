@@ -34,9 +34,10 @@ public class GymClassGUI extends JFrame{
     JTextField ClassesNameText=new JTextField();
     JTextField ClassesIDText=new JTextField();
     JTextField ClassesHoursText=new JTextField();
-   
+   JTextField ClassesIDText2=new JTextField();
     JLabel ClassesNameLabel=new JLabel("Name");
     JLabel ClassesIDLabel=new JLabel("ID");
+    JLabel ClassesIDLabel2=new JLabel("ID");
     JLabel ClassesHoursLabel=new JLabel("Hours");
     Icon AddIcon =new ImageIcon("images(2).png");
     Icon DeleteIcon =new ImageIcon("images(3).png");
@@ -45,7 +46,7 @@ public class GymClassGUI extends JFrame{
     JButton ShowAll=new JButton("Show all classes");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
-    
+    JButton back=new JButton();
     public GymClassGUI (){
         setTitle("Gym Classes");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -58,6 +59,16 @@ public class GymClassGUI extends JFrame{
         Classes.setBounds(30, 40,300 , 80);
         Classes.setFont(f);
         add(Classes);
+         
+         ClassesIDText2.setBounds(320, 250, 200, 35);
+        ClassesIDText2.setFont(fontText);
+        add(ClassesIDText2);
+        
+        
+        ClassesIDLabel2.setForeground(Color.white);
+        ClassesIDLabel2.setBounds(320, 200,100 , 30);
+        ClassesIDLabel2.setFont(fontLabel);
+        add(ClassesIDLabel2);   
          
         
         
@@ -154,6 +165,18 @@ public class GymClassGUI extends JFrame{
            
        validate();  
           
+       
+       
+           back.setBounds(0, 0, 30, 30);
+           add(back);
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               JoinGUI j=new JoinGUI();
+               j.setVisible(true);
+               dispose();
+            }
+        });
      
                 }
 }

@@ -53,7 +53,7 @@ public class CoachesGUI extends JFrame{
     JButton Update=new JButton("Update");
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
-    
+    JButton back=new JButton();
     public CoachesGUI (){
         setTitle("Coaches");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -210,7 +210,19 @@ public class CoachesGUI extends JFrame{
         });
         
            add(ShowAll);
-          validate();
+          
+           
+             back.setBounds(0, 0, 30, 30);
+             add(back);
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               JoinGUI j=new JoinGUI();
+               j.setVisible(true);
+               dispose();
+            }
+        });
+     
         
            
        validate();  

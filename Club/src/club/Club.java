@@ -19,8 +19,10 @@ public class Club {
     public static void main(String[] args) throws IOException {
         
         //MembersGUI m = new  MembersGUI();
-        //GymClassGUI m = new  GymClassGUI();
-          CoachesGUI m = new CoachesGUI();
+//        GymClassGUI m = new  GymClassGUI();
+//          CoachesGUI m = new CoachesGUI();
+JoinGUI h=new JoinGUI();
+
     }
     
 }
