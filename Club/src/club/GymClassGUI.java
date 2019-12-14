@@ -115,7 +115,7 @@ public class GymClassGUI extends JFrame{
                 GymClass obj=new GymClass();
                 obj.addClasses(ClassesNameText.getText(),Integer.parseInt(ClassesHoursText.getText()));
                 ClassesNameText.setText("");
-                ClassesHoursLabel.setText("");
+                ClassesHoursText.setText("");
             }
         });
         Add.setBounds(860,250,30,30);
