@@ -97,7 +97,7 @@ public class JoinGUI extends JFrame {
                 frame.add(scroll);
                 List.addElement("Member Name                  Member ID                Class Name                  Class Hours");
                 arr=obj.InnerJoin();
-                for(int i=0;i<5;i++){
+                for(int i=0;i<50;i++){
                         List.addElement(arr[i]);
                 } 
                 
@@ -122,7 +122,7 @@ public class JoinGUI extends JFrame {
                 frame.add(scroll);
                 List.addElement("Member Name                  Member ID                Class Name                  Class Hours");
                 arr=obj.OuterJoin();
-                for(int i=0;i<5;i++){
+                for(int i=0;i<50;i++){
                         List.addElement(arr[i]);
                 } 
                 
