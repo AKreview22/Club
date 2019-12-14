@@ -20,8 +20,9 @@ public class Club {
         
         //MembersGUI m = new  MembersGUI();
 //        GymClassGUI m = new  GymClassGUI();
-//          CoachesGUI m = new CoachesGUI();
-JoinGUI h=new JoinGUI();
+          CoachesGUI m = new CoachesGUI();
+//JoinGUI h=new JoinGUI();
+//LoginGUI i=new LoginGUI();
 
     }
     

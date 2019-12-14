@@ -161,7 +161,7 @@ ShowAll.addActionListener(new ActionListener() {
                 frame.add(scroll);
                 List.addElement("Name                  ID                Class ID                Phone Number");
                 arr=obj.ShowAllMembers();
-                for(int i=0;i<5;i++){
+                for(int i=0;i<50;i++){
                         List.addElement(arr[i]);
                 } 
                 

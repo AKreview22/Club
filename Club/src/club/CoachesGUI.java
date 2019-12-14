@@ -33,12 +33,14 @@ public class CoachesGUI extends JFrame{
     JLabel Coaches = new JLabel("Coaches");
     JTextField CoachNameText=new JTextField();
     JTextField CoachIDText=new JTextField();
+     JTextField CoachIDText2=new JTextField();
     JTextField CoachClassText=new JTextField();
     JTextField CoachPhoneText=new JTextField();
     JTextField CoachSalaryText=new JTextField();
     JTextField CoachSalaryText2=new JTextField();
     JLabel CoachNameLabel=new JLabel("Name");
     JLabel CoachIDLabel=new JLabel("ID");
+    JLabel CoachIDLabel2=new JLabel("ID");
     JLabel CoachClasseLabel=new JLabel("Class");
     JLabel CoachPhoneLabel=new JLabel("Phone Number");
     JLabel CoachSalaryLabel=new JLabel("Salary");
@@ -78,7 +80,15 @@ public class CoachesGUI extends JFrame{
         CoachNameText.setFont(fontText);
         add(CoachNameText);
         
+        CoachIDLabel2.setForeground(Color.white);
+        CoachIDLabel2.setBounds(40, 400,100 , 30);
+        CoachIDLabel2.setFont(fontLabel);
+        add(CoachIDLabel2); 
         
+        
+        CoachIDText2.setBounds(40, 450,200 , 35);
+        CoachIDText2.setFont(fontText);
+        add(CoachIDText2);
         
         
          CoachIDLabel.setForeground(Color.white);
@@ -166,8 +176,9 @@ public class CoachesGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae) {
                 coaches obj=new coaches();
-                obj.updateSalary(Integer.parseInt(CoachIDText.getText()),Integer.parseInt(CoachSalaryText2.getText()));
-                CoachIDText.setText("");
+                obj.updateSalary(Integer.parseInt(CoachIDText2.getText()),Integer.parseInt(CoachSalaryText2.getText()));
+                CoachIDText2.setText("");
+                CoachSalaryText2.setText("");
                      }
         });
          Update.setForeground(Color.white);
@@ -195,7 +206,7 @@ public class CoachesGUI extends JFrame{
                 frame.add(scroll);
                 List.addElement("Name                  ID                Class ID                phone number                 Salary");
                 arr=obj.ShowAllCoaches();
-                for(int i=0;i<5;i++){
+                for(int i=0;i<50;i++){
                         List.addElement(arr[i]);
                 }
             }
