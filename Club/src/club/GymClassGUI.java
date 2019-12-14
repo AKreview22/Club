@@ -32,12 +32,10 @@ public class GymClassGUI extends JFrame{
     JPanel jp=new JPanel();
     JLabel Classes = new JLabel("Classes");
     JTextField ClassesNameText=new JTextField();
-  
+    JTextField ClassesIDText=new JTextField();
     JTextField ClassesHoursText=new JTextField();
-   JTextField ClassesIDText2=new JTextField();
     JLabel ClassesNameLabel=new JLabel("Name");
-    
-    JLabel ClassesIDLabel2=new JLabel("ID");
+    JLabel ClassesIDLabel=new JLabel("ID");
     JLabel ClassesHoursLabel=new JLabel("Hours");
     Icon AddIcon =new ImageIcon("images(2).png");
     Icon DeleteIcon =new ImageIcon("images(3).png");
@@ -60,16 +58,7 @@ public class GymClassGUI extends JFrame{
         Classes.setFont(f);
         add(Classes);
          
-         ClassesIDText2.setBounds(320, 250, 200, 35);
-        ClassesIDText2.setFont(fontText);
-        add(ClassesIDText2);
         
-        
-        ClassesIDLabel2.setForeground(Color.white);
-        ClassesIDLabel2.setBounds(320, 200,100 , 30);
-        ClassesIDLabel2.setFont(fontLabel);
-        add(ClassesIDLabel2);   
-         
         
         
          ClassesNameLabel.setForeground(Color.white);
@@ -84,6 +73,17 @@ public class GymClassGUI extends JFrame{
         add(ClassesNameText);
         
         
+        
+        
+         ClassesIDLabel.setForeground(Color.white);
+        ClassesIDLabel.setBounds(40, 300,100 , 30);
+        ClassesIDLabel.setFont(fontLabel);
+        add(ClassesIDLabel);   
+        
+        
+         ClassesIDText.setBounds(40, 350,200 , 35);
+        ClassesIDText.setFont(fontText);
+        add(ClassesIDText);
         
         
         
