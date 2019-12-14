@@ -174,7 +174,7 @@ public class CoachesGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae) {
                 coaches obj=new coaches();
-                obj.updateSalary(Integer.parseInt(CoachIDText.getText()),Integer.parseInt(CoachSalaryText.getText()));
+                obj.updateSalary(Integer.parseInt(CoachSalaryText.getText()),Integer.parseInt(CoachIDText.getText()));
                 CoachIDText.setText("");
                      }
         });
