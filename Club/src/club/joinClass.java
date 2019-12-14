@@ -27,7 +27,7 @@ public class joinClass {
                    
                   int i=0;
                    while(rs.next()){
-                       arr[i]=rs.getString(1)+"                "+Integer.toString(rs.getInt(2))+"                "+rs.getString(3)+"                "+Integer.toString(rs.getInt(4));
+                       arr[i]=rs.getString(1)+"                    "+Integer.toString(rs.getInt(2))+"                    "+rs.getString(3)+"                    "+Integer.toString(rs.getInt(4));
 
                        i++;
                    }  

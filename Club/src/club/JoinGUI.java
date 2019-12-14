@@ -92,7 +92,7 @@ public class JoinGUI extends JFrame {
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
                 frame.add(scroll);
-                List.addElement("Member Name                  ID                Class ID                Phone Number                Hours                Class Name");
+                List.addElement("Member Name                  Member ID                Class Name                  Class Hours");
                 arr=obj.InnerJoin();
                 for(int i=0;i<5;i++){
                         List.addElement(arr[i]);
@@ -117,7 +117,7 @@ public class JoinGUI extends JFrame {
                 scroll.setBounds(200, 200, 400, 500);
                 scroll.setViewportView(list);
                 frame.add(scroll);
-                List.addElement("Member Name                  ID                Class ID                Phone Number                Hours                Class Name");
+                List.addElement("Member Name                  Member ID                Class Name                  Class Hours");
                 arr=obj.OuterJoin();
                 for(int i=0;i<5;i++){
                         List.addElement(arr[i]);
