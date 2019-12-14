@@ -54,11 +54,12 @@ public class CoachesGUI extends JFrame{
     Font fontLabel=new Font("TimesRoman",Font.ITALIC,25);
     Font fontText=new Font("TimesRoman",Font.ITALIC,15);
     JButton back=new JButton();
+    
     public CoachesGUI (){
         setTitle("Coaches");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(1650,750);
+        setSize(1400,750);
         setContentPane(new JLabel(new ImageIcon("D:\\Study\\Database\\Design.jpg")));
         
         Coaches.setForeground(Color.white);
@@ -195,7 +196,7 @@ public class CoachesGUI extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                JFrame frame=new JFrame();
                 frame.setVisible(true);
-                frame. setSize(1650,750);
+                frame. setSize(1400,750);
                 coaches obj=new coaches();
                 DefaultListModel<String>List=new DefaultListModel<>();
                 JList<String>list=new JList<>(List);

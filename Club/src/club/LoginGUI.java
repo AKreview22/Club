@@ -41,7 +41,7 @@ private static String uName, password;
         setTitle("Login");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(1650,750);
+        setSize(1400,750);
         setContentPane(new JLabel(new ImageIcon("D:\\Study\\Database\\Design.jpg")));
         
         UserNameLabel.setBounds(500, 300, 100, 30);
