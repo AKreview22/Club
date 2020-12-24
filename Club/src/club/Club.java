@@ -22,7 +22,8 @@ public class Club {
 //        GymClassGUI m = new  GymClassGUI();
           //CoachesGUI m = new CoachesGUI();
 //JoinGUI h=new JoinGUI();
-LoginGUI i=new LoginGUI();
+        System.out.println("HELLO");
+//LoginGUI i=new LoginGUI();
 
     }
     
